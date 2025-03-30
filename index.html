@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColeCodes - Web Development</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #2a3c66, #1d2b4f);
+            color: #fff;
+            text-align: center;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            padding: 40px 0;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            background: -webkit-linear-gradient(to right, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        header h2 {
+            font-size: 1.5em;
+            margin: 20px 0;
+            color: #ffecb3;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 20px;
+        }
+
+        .tab {
+            padding: 15px 30px;
+            background-color: #4e73df;
+            color: white;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .tab:hover {
+            background-color: #2e59d9;
+            transform: scale(1.1);
+        }
+
+        .tab.active-tab {
+            background-color: #2e59d9;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 50px 20px;
+            gap: 20px;
+        }
+
+        .card {
+            width: 30%;
+            background: #fff;
+            color: #333;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h2 {
+            background: #4e73df;
+            color: #fff;
+            padding: 15px 0;
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .card p {
+            padding: 15px;
+            font-size: 1.1em;
+        }
+
+        .section-title {
+            margin-top: 50px;
+            font-size: 2.5em;
+            color: #ffecb3;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .info {
+            font-size: 1.3em;
+            line-height: 1.8;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        footer {
+            background-color: #1d2b4f;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer h2 {
+            margin: 0;
+            font-size: 2em;
+            font-weight: 300;
+        }
+
+        footer p {
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ColeCodes</h1>
+    <h2>Building innovative websites with modern technologies</h2>
+</header>
+
+<!-- Navigation Tabs -->
+<div class="tabs">
+    <div class="tab active-tab" onclick="showSection('pricing')">Pricing</div>
+    <div class="tab" onclick="showSection('services')">Services</div>
+    <div class="tab" onclick="showSection('contact')">Contact</div>
+</div>
+
+<!-- Main Content -->
+<div class="container">
+    <!-- Pricing Section -->
+    <div id="pricing" class="card">
+        <h2>Pricing</h2>
+        <a href="pricing.html">
+            <img src="https://img.freepik.com/free-vector/cute-money-holding-money-bag-cartoon-vector-icon-illustration-finance-object-icon-isolated-flat_138676-14083.jpg" alt="Pricing">
+        </a>
+        <p>Affordable website solutions for everyone. Let’s build your dream website without breaking the bank!</p>
+    </div>
+
+    <!-- Services Section -->
+    <div id="services" class="card">
+        <h2>Services</h2>
+        <a href="services.html">
+            <img src="https://thumbs.dreamstime.com/b/conceptual-hand-writing-showing-our-services-concept-meaning-occupation-function-serving-intangible-products-male-wear-160644151.jpg" alt="Services">
+        </a>
+        <p>Discover how we can help your business grow with top-notch services like web development, design, and SEO optimization.</p>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="card">
+        <h2>Contact</h2>
+        <a href="contacts.html">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqs89hFEVKTmXy1hbWdo5cgwV7qFJhTDSBeQ&s" alt="Contact">
+        </a>
+        <p>Reach out for more info or to get started! We’d love to work with you on your next big project!</p>
+    </div>
+</div>
+
+<!-- Additional Content -->
+<h2 class="section-title">Who Are We?</h2>
+<p class="info">
+    We are a mini development company specializing in web design and custom AI solutions.<br>
+    If you need a personal website, a business page, or an interactive web experience, we are here to help!
+</p>
+
+<h2 class="section-title">Why Choose Us?</h2>
+<p class="info">
+    Fast, high-quality web development at competitive prices.<br>
+    Our youthful energy and modern approach ensure a fresh and unique experience.
+</p>
+
+<h2 class="section-title">More About Us</h2>
+<p class="info">
+    We focus on creating interactive, user-friendly websites that leave a lasting impact.<br>
+    Our team is dedicated to making your online presence remarkable.
+</p>
+
+<footer>
+    <h2>Let’s Get Started!</h2>
+    <p>Contact us today to begin your journey towards an outstanding website!</p>
+</footer>
+
+<script>
+    function showSection(sectionId) {
+        // Hide all sections
+        const sections = document.querySelectorAll('.card');
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+
+        // Remove active tab
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(tab => {
+            tab.classList.remove('active-tab');
+        });
+
+        // Show the selected section and highlight the active tab
+        document.getElementById(sectionId).style.display = 'block';
+        const activeTab = document.querySelector(`[onclick="showSection('${sectionId}')"]`);
+        activeTab.classList.add('active-tab');
+    }
+
+    // Show pricing section by default
+    showSection('pricing');
+</script>
+
+</body>
+</html>
