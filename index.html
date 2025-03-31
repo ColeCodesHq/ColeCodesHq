@@ -15,15 +15,16 @@
         }
 
         header {
-            background: linear-gradient(135deg, #3a5f85, #2c3e50); /* Updated gradient */
+            background: linear-gradient(135deg, #3a5f85, #2c3e50);
             padding: 40px 0;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         header h1 {
             font-size: 3.5em;
             margin: 0;
-            background: -webkit-linear-gradient(to right, #3a5f85, #2c3e50); /* Updated gradient */
+            background: -webkit-linear-gradient(to right, #3a5f85, #2c3e50);
             -webkit-background-clip: text;
             color: transparent;
         }
@@ -32,6 +33,23 @@
             font-size: 1.5em;
             margin: 20px 0;
             color: #ffecb3;
+        }
+
+        .login-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            padding: 10px 20px;
+            background-color: #e02f2f;
+            color: white;
+            font-size: 1.2em;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #c12f2f;
         }
 
         .tabs {
@@ -142,6 +160,7 @@
 <header>
     <h1>ColeCodes</h1>
     <h2>Building innovative websites with modern technologies</h2>
+    <a href="login.html" class="login-btn">Login</a>
 </header>
 
 <!-- Navigation Tabs -->
@@ -153,7 +172,6 @@
 
 <!-- Main Content -->
 <div class="container">
-    <!-- Pricing Section -->
     <div id="pricing" class="card">
         <h2>Pricing</h2>
         <a href="pricing.html">
@@ -162,7 +180,6 @@
         <p>Affordable website solutions for everyone. Let’s build your dream website without breaking the bank!</p>
     </div>
 
-    <!-- Services Section -->
     <div id="services" class="card">
         <h2>Services</h2>
         <a href="services.html">
@@ -171,7 +188,6 @@
         <p>Discover how we can help your business grow with top-notch services like web development, design, and SEO optimization.</p>
     </div>
 
-    <!-- Contact Section -->
     <div id="contact" class="card">
         <h2>Contact</h2>
         <a href="contacts.html">
@@ -181,7 +197,6 @@
     </div>
 </div>
 
-<!-- Additional Content -->
 <h2 class="section-title">Who Are We?</h2>
 <p class="info">
     We are a mini development company specializing in web design and custom AI solutions.<br>
@@ -207,27 +222,19 @@
 
 <script>
     function showSection(sectionId) {
-        // Hide all sections
         const sections = document.querySelectorAll('.card');
-        sections.forEach(section => {
-            section.style.display = 'none';
-        });
+        sections.forEach(section => section.style.display = 'none');
 
-        // Remove active tab
         const tabs = document.querySelectorAll('.tab');
-        tabs.forEach(tab => {
-            tab.classList.remove('active-tab');
-        });
+        tabs.forEach(tab => tab.classList.remove('active-tab'));
 
-        // Show the selected section and highlight the active tab
         document.getElementById(sectionId).style.display = 'block';
-        const activeTab = document.querySelector(`[onclick="showSection('${sectionId}')"]`);
-        activeTab.classList.add('active-tab');
+        document.querySelector(`[onclick="showSection('${sectionId}')"]`).classList.add('active-tab');
     }
 
-    // Show pricing section by default
     showSection('pricing');
 </script>
 
 </body>
 </html>
+
