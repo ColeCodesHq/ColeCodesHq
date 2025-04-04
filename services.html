@@ -8,17 +8,19 @@
     <meta name="author" content="Cole Madyira">
     <title>ColeCodes - Services</title>
     
-    <!-- Link to Google Fonts -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- CSS for styling -->
     <style>
         body {
-            background-color: #0077b6; /* Soft Blue Background */
+            background-color: #0077b6;
             color: white;
-            font-family: 'Roboto', sans-serif; /* Using Roboto font */
+            font-family: 'Roboto', sans-serif;
             padding: 30px;
             text-align: center;
+            position: relative;
         }
 
         header {
@@ -26,14 +28,15 @@
         }
 
         h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #00b4d8; /* Light Blue */
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffd60a;
+            text-shadow: 2px 2px #003049;
         }
 
         p {
             font-size: 1.2rem;
-            font-family: 'Poppins', sans-serif; /* Using Poppins for description */
+            font-family: 'Poppins', sans-serif;
         }
 
         table {
@@ -47,25 +50,21 @@
         th, td {
             padding: 15px;
             font-size: 1.2rem;
-            text-align: center;
-            border: 2px solid black; /* Black borders */
+            border: 2px solid black;
         }
 
         th {
-            background-color: #005f73; /* Darker blue */
+            background-color: #005f73;
             color: white;
-            font-weight: bold;
         }
 
         td {
-            background-color: #56b6c2; /* Lighter blue */
+            background-color: #56b6c2;
             color: white;
-            font-weight: normal;
         }
 
         td:hover {
-            background-color: #00b4d8; /* Hover effect on table cells */
-            color: white;
+            background-color: #00b4d8;
         }
 
         td:nth-child(even) {
@@ -74,29 +73,64 @@
         }
 
         footer {
-            margin-top: 40px;
+            margin-top: 50px;
         }
 
-        a {
-            font-size: 1.8rem;
-            color: #ff7e5f;
-            text-decoration: none;
+        /* Email Button */
+        .email-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.5rem;
             font-weight: bold;
-            background-color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        a:hover {
             background-color: #ff7e5f;
             color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
-        /* Media Queries for responsiveness */
+        .email-button .material-icons {
+            font-size: 1.8rem;
+        }
+
+        .email-button:hover {
+            background-color: #d65a31;
+            transform: scale(1.05);
+        }
+
+        /* Floating Email Button */
+        .fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #ffd60a;
+            color: black;
+            font-size: 1.8rem;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            z-index: 100;
+        }
+
+        .fab:hover {
+            background-color: #ffc300;
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem;
+                font-size: 2.3rem;
             }
 
             p {
@@ -112,8 +146,18 @@
                 padding: 10px;
             }
 
-            a {
-                font-size: 1.5rem;
+            .email-button {
+                font-size: 1.2rem;
+                padding: 10px 20px;
+            }
+
+            .email-button .material-icons {
+                font-size: 1.4rem;
+            }
+
+            .fab {
+                font-size: 1.4rem;
+                padding: 12px;
             }
         }
     </style>
@@ -143,11 +187,19 @@
             </tr>
             <tr>
                 <td>Custom Web Apps</td>
-                <td>Need something unique? We build custom web applications designed to meet your business needs and goals.</td>
+                <td>Need something unique? We build custom web applications tailored to your brand, workflows, and audience needs.</td>
+            </tr>
+            <tr>
+                <td>Custom AI</td>
+                <td>Smart tools that think for you – from chatbots to content generators, we design AI tailored for your business goals.</td>
             </tr>
             <tr>
                 <td>AI Solutions</td>
                 <td>Take advantage of custom AI tools that enhance your business processes and give you a competitive edge.</td>
+            </tr>
+            <tr>
+                <td>Custom Apps</td>
+                <td>Whether for web or mobile, we develop high-performance apps built around your idea and business logic.</td>
             </tr>
             <tr>
                 <td>E-commerce Solutions</td>
@@ -166,23 +218,17 @@
 
     <!-- Footer Section -->
     <footer>
-        <p>Ready to start? <a href="contact.html">Contact us today</a> to discuss your project!</p>
+        <p>Ready to start?</p>
+        <a href="mailto:coletmadyira@gmail.com" class="email-button">
+            <span class="material-icons">mail</span>
+            Email ColeCodes
+        </a>
     </footer>
 
-    <!-- JavaScript for form validation (if applicable) -->
-    <script>
-        // Example JavaScript for form validation (you can extend this)
-        function validateForm() {
-            let email = document.getElementById("email").value;
-            if (email == "") {
-                alert("Email must be filled out");
-                return false;
-            }
-            // Add more validations as needed
-        }
-    </script>
-
-    <!-- Optional: Add Google Analytics or other tracking scripts here -->
+    <!-- Floating Action Button -->
+    <a href="mailto:coletmadyira@gmail.com" class="fab" title="Email Cole">
+        <span class="material-icons">mail</span>
+    </a>
 
 </body>
 </html>
