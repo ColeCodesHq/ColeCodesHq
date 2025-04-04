@@ -40,6 +40,7 @@
             justify-content: center;
             margin: 20px 0;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
         .tab {
@@ -54,7 +55,6 @@
             overflow: hidden;
         }
 
-        /* Adding RGB glow effect around the buttons */
         .tab::before {
             content: '';
             position: absolute;
@@ -176,23 +176,12 @@
         }
 
         @keyframes rgbPulse {
-            0% {
-                background: rgb(255, 0, 0);
-            }
-            25% {
-                background: rgb(0, 255, 0);
-            }
-            50% {
-                background: rgb(0, 0, 255);
-            }
-            75% {
-                background: rgb(255, 255, 0);
-            }
-            100% {
-                background: rgb(255, 0, 255);
-            }
+            0% { background: rgb(255, 0, 0); }
+            25% { background: rgb(0, 255, 0); }
+            50% { background: rgb(0, 0, 255); }
+            75% { background: rgb(255, 255, 0); }
+            100% { background: rgb(255, 0, 255); }
         }
-
     </style>
 </head>
 <body>
@@ -202,15 +191,14 @@
     <h2>Building innovative websites with modern technologies</h2>
 </header>
 
-<!-- Navigation Tabs -->
 <div class="tabs">
-    <div class="tab active-tab" onclick="showSection('pricing')">Pricing</div>
+    <div class="tab" onclick="showSection('pricing')">Pricing</div>
     <div class="tab" onclick="showSection('services')">Services</div>
     <div class="tab" onclick="showSection('contact')">Contact</div>
     <div class="tab" onclick="showSection('signup')">Sign Up</div>
+    <div class="tab active-tab" onclick="showSection('portfolio')">Portfolio</div> <!-- ✅ Added -->
 </div>
 
-<!-- Main Content -->
 <div class="container">
     <div id="pricing" class="card">
         <h2>Pricing</h2>
@@ -242,6 +230,15 @@
             <img src="https://img.icons8.com/ios/452/sign-up.png" alt="Sign Up">
         </a>
         <p>Sign up today and get started on building your perfect website!</p>
+    </div>
+
+    <!-- ✅ Portfolio Section -->
+    <div id="portfolio" class="card">
+        <h2>Portfolio</h2>
+        <a href="https://colecodeshq.github.io/ColeCodes-portfolio/" target="_blank">
+            <img src="https://via.placeholder.com/400x200.png?text=Uranus+Designs+Project" alt="Portfolio Screenshot">
+        </a>
+        <p>Check out my recent project: <strong>Uranus Designs</strong> — a sleek, responsive 3-page website built for a design company. Explore the live site to see my work!</p>
     </div>
 </div>
 
@@ -280,7 +277,7 @@
         document.querySelector(`[onclick="showSection('${sectionId}')"]`).classList.add('active-tab');
     }
 
-    showSection('pricing');
+    showSection('portfolio'); // 👈 Loads Portfolio first
 </script>
 
 </body>
