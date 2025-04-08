@@ -83,24 +83,6 @@
             background-color: #2e59d9;
         }
 
-        .login-btn {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            padding: 10px 20px;
-            background-color: #e02f2f;
-            color: white;
-            font-size: 1.2em;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .login-btn:hover {
-            background-color: #c12f2f;
-            transform: scale(1.1);
-        }
-
         .container {
             display: flex;
             justify-content: space-around;
@@ -176,11 +158,21 @@
         }
 
         @keyframes rgbPulse {
-            0% { background: rgb(255, 0, 0); }
-            25% { background: rgb(0, 255, 0); }
-            50% { background: rgb(0, 0, 255); }
-            75% { background: rgb(255, 255, 0); }
-            100% { background: rgb(255, 0, 255); }
+            0% {
+                background: rgb(255, 0, 0);
+            }
+            25% {
+                background: rgb(0, 255, 0);
+            }
+            50% {
+                background: rgb(0, 0, 255);
+            }
+            75% {
+                background: rgb(255, 255, 0);
+            }
+            100% {
+                background: rgb(255, 0, 255);
+            }
         }
     </style>
 </head>
@@ -191,29 +183,31 @@
     <h2>Building innovative websites with modern technologies</h2>
 </header>
 
+<!-- Navigation Tabs -->
 <div class="tabs">
+    <div class="tab active-tab" onclick="showSection('services')">Services</div>
     <div class="tab" onclick="showSection('pricing')">Pricing</div>
-    <div class="tab" onclick="showSection('services')">Services</div>
     <div class="tab" onclick="showSection('contact')">Contact</div>
     <div class="tab" onclick="showSection('signup')">Sign Up</div>
-    <div class="tab active-tab" onclick="showSection('portfolio')">Portfolio</div> <!-- ✅ Added -->
+    <div class="tab" onclick="showSection('portfolio')">Portfolio</div>
 </div>
 
+<!-- Main Content -->
 <div class="container">
-    <div id="pricing" class="card">
-        <h2>Pricing</h2>
-        <a href="pricing.html">
-            <img src="https://img.freepik.com/free-vector/cute-money-holding-money-bag-cartoon-vector-icon-illustration-finance-object-icon-isolated-flat_138676-14083.jpg" alt="Pricing">
-        </a>
-        <p>Affordable website solutions for everyone. Let’s build your dream website without breaking the bank!</p>
-    </div>
-
     <div id="services" class="card">
         <h2>Services</h2>
         <a href="services.html">
             <img src="https://thumbs.dreamstime.com/b/conceptual-hand-writing-showing-our-services-concept-meaning-occupation-function-serving-intangible-products-male-wear-160644151.jpg" alt="Services">
         </a>
         <p>Discover how we can help your business grow with top-notch services like web development, design, and SEO optimization.</p>
+    </div>
+
+    <div id="pricing" class="card">
+        <h2>Pricing</h2>
+        <a href="pricing.html">
+            <img src="https://img.freepik.com/free-vector/cute-money-holding-money-bag-cartoon-vector-icon-illustration-finance-object-icon-isolated-flat_138676-14083.jpg" alt="Pricing">
+        </a>
+        <p>Affordable website solutions for everyone. Let’s build your dream website without breaking the bank!</p>
     </div>
 
     <div id="contact" class="card">
@@ -232,13 +226,12 @@
         <p>Sign up today and get started on building your perfect website!</p>
     </div>
 
-    <!-- ✅ Portfolio Section -->
     <div id="portfolio" class="card">
         <h2>Portfolio</h2>
         <a href="https://colecodeshq.github.io/ColeCodes-portfolio/" target="_blank">
-            <img src="https://via.placeholder.com/400x200.png?text=Uranus+Designs+Project" alt="Portfolio Screenshot">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Portfolio">
         </a>
-        <p>Check out my recent project: <strong>Uranus Designs</strong> — a sleek, responsive 3-page website built for a design company. Explore the live site to see my work!</p>
+        <p>Take a look at some of my past projects and see what I can do for you!</p>
     </div>
 </div>
 
@@ -277,7 +270,7 @@
         document.querySelector(`[onclick="showSection('${sectionId}')"]`).classList.add('active-tab');
     }
 
-    showSection('portfolio'); // 👈 Loads Portfolio first
+    showSection('services'); // Set default tab to Services
 </script>
 
 </body>
